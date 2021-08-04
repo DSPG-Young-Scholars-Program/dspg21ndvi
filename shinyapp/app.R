@@ -674,11 +674,11 @@ server <- function(input, output, session) {
     
     
     
-    geotiffFile = "./www/2021_NN_Predictions_2.tif"
-    
-    my_file = raster(geotiffFile)
-    
-    my_file[!(my_file > 0)] = NA
+    # geotiffFile = "./www/2021_NN_Predictions_2.tif"
+    # 
+    # my_file = raster(geotiffFile)
+    # 
+    # my_file[!(my_file > 0)] = NA
     
     pal = colorNumeric(
       palette = 'viridis',
@@ -687,7 +687,7 @@ server <- function(input, output, session) {
     
     m <- leaflet()
     
-    m <- addGeoRaster(m, my_file,
+    m <- addGeoRaster(m, my_file_crop,
                       opacity = 0.55,
                       autozoom = FALSE,
                       colorOptions = colorOptions(
